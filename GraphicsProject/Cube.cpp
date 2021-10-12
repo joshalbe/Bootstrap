@@ -8,14 +8,18 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 
 	vertices = new Vertex[vertexCount];
 
-	initailizeCorner(vertices, vertexCount, 0, { -1.0f,  1.0f,	 -1.0f,  });  //A
-	initailizeCorner(vertices, vertexCount, 1, {  1.0f,	 1.0f,	  1.0f,  });  //B
-	initailizeCorner(vertices, vertexCount, 2, {  1.0f,	-1.0f,	 -1.0f,  });  //C
-	initailizeCorner(vertices, vertexCount, 3, { -1.0f, -1.0f,	  1.0f,  });  //D
-	initailizeCorner(vertices, vertexCount, 4, {  1.0f,	 1.0f,	 -1.0f,  });  //E
-	initailizeCorner(vertices, vertexCount, 5, { -1.0f,  1.0f,	  1.0f,  });  //F
-	initailizeCorner(vertices, vertexCount, 6, { -1.0f, -1.0f,	 -1.0f,  });  //G
-	initailizeCorner(vertices, vertexCount, 7, {  1.0f, -1.0f,	  1.0f,  });  //H
+	
+	initailizeCorner(vertices, vertexCount, 3, {  1.0f,	 1.0f,	  1.0f,  });  //B
+	initailizeCorner(vertices, vertexCount, 0, {  1.0f,	 1.0f,	 -1.0f,  });  //E
+	initailizeCorner(vertices, vertexCount, 4, { 1.0f, -1.0f,	  1.0f, });  //H
+	initailizeCorner(vertices, vertexCount, 7, {  1.0f,	-1.0f,	 -1.0f, });  //C
+	initailizeCorner(vertices, vertexCount, 2, { -1.0f,  1.0f,	  1.0f, });  //F
+	initailizeCorner(vertices, vertexCount, 1, { -1.0f,  1.0f,	 -1.0f, });  //A
+	initailizeCorner(vertices, vertexCount, 5, { -1.0f, -1.0f,	  1.0f, });  //D
+	initailizeCorner(vertices, vertexCount, 6, { -1.0f, -1.0f,	 -1.0f, });  //G
+
+	//Sequence AEBFGCHD?
+	//Missing 4 triangles, and the existing ones overlap
 
 	return vertices;
 }

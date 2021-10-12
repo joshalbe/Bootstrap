@@ -12,9 +12,9 @@ void DragonWorld::onStart()
 	//Light
 	m_light = new Light(
 		{ 1.0f, 1.0f, 1.0f },
-		{ 0.5f, 0.5f, 0.5f, 1.0f },
-		{ 1.0f, 1.0f, 1.0f, 1.0f },
-		{ 1.0f, 1.0f, 1.0f, 1.0f }
+		{ 0.25f, 0.5f, 0.5f, 1.0f },
+		{ 0.5f, 1.0f, 1.0f, 1.0f },
+		{ 0.5f, 1.0f, 1.0f, 1.0f }
 	);
 	m_light->setDirection({ -40.0f, -100.0f, 0.0f });
 	add(m_light);
@@ -27,8 +27,8 @@ void DragonWorld::onStart()
 	add(m_dragon);
 
 	//Cube
-	/*m_cube = new Cube();
-	add(m_cube);*/
+	m_cube = new Cube();
+	add(m_cube);
 }
 
 void DragonWorld::onEnd()
