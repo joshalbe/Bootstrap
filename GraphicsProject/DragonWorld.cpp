@@ -22,12 +22,13 @@ void DragonWorld::onStart()
 	//Dragon
 	m_dragon = new OBJMesh();
 	m_dragon->load("Dragon.obj");
-	m_dragon->getTransform()->setPosition({ 5.0f, 0.0f, 0.0f });
-	m_dragon->getTransform()->setScale(glm::vec3());
+	m_dragon->getTransform()->setPosition({ 0.0f, -2.0f, 0.0f });
+	m_dragon->getTransform()->setScale(glm::vec3(0.5f, 0.5f, 0.5f));
 	add(m_dragon);
 
 	//Cube
 	m_cube = new Cube();
+	m_cube->getTransform()->setScale(glm::vec3(7.5f, 1.5f, 4.0f));
 	add(m_cube);
 }
 
