@@ -11,9 +11,9 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	/*
 		AFBEGDHC
 
-		A---E		6---5		G---C		7---4
-		|	|	->	|	|		|	|	->	|	|
-		F---B		1---0		D---H		2---3
+		A6------E5		G7------C4
+		|		|		|		|	
+		F1------B0		D2------H3
 
 
 	*/
