@@ -34,7 +34,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 
 	*/
 
-	//Front Face
+	//Front Face 012-230
 	initializeCorner(vertices, vertexCount, 0, { 1.0f,		 1.0f,		 1.0f, });  //B0
 	initializeCorner(vertices, vertexCount, 1, { -1.0f,		 1.0f,		 1.0f, });  //F1
 	initializeCorner(vertices, vertexCount, 2, { -1.0f,		-1.0f,		 1.0f, });  //D2
@@ -43,7 +43,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	initializeCorner(vertices, vertexCount, 4, { 1.0f,		-1.0f,		 1.0f, });  //H3
 	initializeCorner(vertices, vertexCount, 5, { 1.0f,		 1.0f,		 1.0f, });  //B0
 
-	//Right Face
+	//Right Face 034-450
 	initializeCorner(vertices, vertexCount, 6, { 1.0f,		 1.0f,		 1.0f, });  //B0
 	initializeCorner(vertices, vertexCount, 7, { 1.0f,		-1.0f,		 1.0f, });  //H3
 	initializeCorner(vertices, vertexCount, 8, { 1.0f,		-1.0f,		-1.0f, });  //C4
@@ -52,7 +52,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	initializeCorner(vertices, vertexCount, 10, { 1.0f,		 1.0f,		-1.0f, });  //E5
 	initializeCorner(vertices, vertexCount, 11, { 1.0f,		 1.0f,		 1.0f, });  //B0
 
-	//Top Face
+	//Top Face 056-610
 	initializeCorner(vertices, vertexCount, 12, { 1.0f,		 1.0f,		 1.0f, });  //B0
 	initializeCorner(vertices, vertexCount, 13, { 1.0f,		 1.0f,		-1.0f, });  //E5
 	initializeCorner(vertices, vertexCount, 14, { -1.0f,		 1.0f,		-1.0f, });  //A6
