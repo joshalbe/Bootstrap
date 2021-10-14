@@ -16,7 +16,7 @@ private:
 	glm::vec4 m_color = glm::vec4(1.0f);
 
 private:
-	void initailizeCorner(Vertex* vertices, int vertexCount, int index, glm::vec3 position);
+	void initializeCorner(Vertex* vertices, int vertexCount, int index, glm::vec3 position);
 
 };
 
