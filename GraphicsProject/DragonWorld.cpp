@@ -30,6 +30,22 @@ void DragonWorld::onStart()
 	m_cube = new Cube();
 	m_cube->getTransform()->setScale(glm::vec3(7.5f, 1.5f, 4.0f));
 	add(m_cube);
+
+	m_supportStruct1 = new Cube();
+	m_supportStruct1->getTransform()->setPosition({ 3.0f, -4.0f, 4.0f });
+	m_supportStruct1->getTransform()->setScale(glm::vec3(1.0f, 9.5f, 1.0f));
+	add(m_supportStruct1);
+
+	m_supportStruct2 = new Cube();
+	m_supportStruct2->getTransform()->setPosition({ 3.0f, -4.0f, -4.0f });
+	m_supportStruct2->getTransform()->setScale(glm::vec3(1.0f, 9.5f, 1.0f));
+	add(m_supportStruct2);
+
+
+	m_pedestal = new Cube();
+	m_pedestal->getTransform()->setPosition({ 0.0f, 1.0f, 0.0f });
+	m_pedestal->getTransform()->setScale(glm::vec3(20.0f, 0.5f, 20.0f));
+	add(m_pedestal);
 }
 
 void DragonWorld::onEnd()

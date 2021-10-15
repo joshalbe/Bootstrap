@@ -17,5 +17,12 @@ private:
 	OBJMesh* m_dragon = nullptr;
 	Cube* m_cube = nullptr;
 
+	Cube* m_pedestal = nullptr;
+	Cube* m_canopy = nullptr;
+	Cube* m_supportStruct1 = nullptr;
+	Cube* m_supportStruct2 = nullptr;
+	Cube* m_supportStruct3 = nullptr;
+	Cube* m_supportStruct4 = nullptr;
+
 };
 
