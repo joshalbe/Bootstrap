@@ -11,6 +11,7 @@ void PlayerCamera::onUpdate(float deltaTime)
     int keyRight = GLFW_KEY_D;
     int keyUp = GLFW_KEY_E;
     int keyDown = GLFW_KEY_Q;
+    int keyShift = GLFW_KEY_LEFT_SHIFT;
 
     //Get the direction vectors
     glm::vec3 right = getTransform()->getRight();
@@ -19,28 +20,64 @@ void PlayerCamera::onUpdate(float deltaTime)
 
     //Check input
     if (glfwGetKey(window, keyForward)) {
-        //Move forward
-        getTransform()->translate(forward * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move forward faster
+            getTransform()->translate(forward * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move forward
+            getTransform()->translate(forward * m_moveSpeed * (float)deltaTime);
+        }
     }
     if (glfwGetKey(window, keyBack)) {
-        //Move back
-        getTransform()->translate(-forward * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move back faster
+            getTransform()->translate(-forward * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move back
+            getTransform()->translate(-forward * m_moveSpeed * (float)deltaTime);
+        }
     }
     if (glfwGetKey(window, keyLeft)) {
-        //Move left
-        getTransform()->translate(-right * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move left faster
+            getTransform()->translate(-right * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move left
+            getTransform()->translate(-right * m_moveSpeed * (float)deltaTime);
+        }
     }
     if (glfwGetKey(window, keyRight)) {
-        //Move right
-        getTransform()->translate(right * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move right faster
+            getTransform()->translate(right * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move right
+            getTransform()->translate(right * m_moveSpeed * (float)deltaTime);
+        }
     }
     if (glfwGetKey(window, keyUp)) {
-        //Move up
-        getTransform()->translate(up * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move up faster
+            getTransform()->translate(up * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move up
+            getTransform()->translate(up * m_moveSpeed * (float)deltaTime);
+        }
     }
     if (glfwGetKey(window, keyDown)) {
-        //Move down
-        getTransform()->translate(-up * m_moveSpeed * (float)deltaTime);
+        if (glfwGetKey(window, keyShift)) {
+            //Move down faster
+            getTransform()->translate(-up * (m_moveSpeed * 4) * (float)deltaTime);
+        }
+        else {
+            //Move down
+            getTransform()->translate(-up * m_moveSpeed * (float)deltaTime);
+        }
     }
 
     //Get current mouse coordinates
