@@ -1,12 +1,13 @@
 #include "Light.h"
 #include "gl_core_4_4.h"
 
-Light::Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular)
+Light::Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, bool firstLight)
 {
 	setDirection(direction);
 	m_ambient = ambient;
 	m_diffuse = diffuse;
 	m_specular = specular;
+	isFirstLight = firstLight;
 }
 
 void Light::onDraw()
@@ -19,10 +20,24 @@ void Light::onDraw()
 		return;
 	}
 
-	int lightDirection = glGetUniformLocation(program, "iDirection");
-	int lightAmbient = glGetUniformLocation(program, "iAmbient");
-	int lightDiffuse = glGetUniformLocation(program, "iDiffuse");
-	int lightSpecular = glGetUniformLocation(program, "iSpecular");
+	int lightDirection;
+	int lightAmbient;
+	int lightDiffuse;
+	int lightSpecular;
+
+	if (isFirstLight) {
+		lightDirection = glGetUniformLocation(program, "iDirection");
+		lightAmbient = glGetUniformLocation(program, "iAmbient");
+		lightDiffuse = glGetUniformLocation(program, "iDiffuse");
+		lightSpecular = glGetUniformLocation(program, "iSpecular");
+	}
+	else {
+		lightDirection = glGetUniformLocation(program, "iDirection1");
+		lightAmbient = glGetUniformLocation(program, "iAmbient1");
+		lightDiffuse = glGetUniformLocation(program, "iDiffuse1");
+		lightSpecular = glGetUniformLocation(program, "iSpecular1");
+	}
+	
 
 	if (lightDirection >= 0) {
 		glm::vec3 direction = getDirection();

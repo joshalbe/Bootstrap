@@ -11,13 +11,25 @@ void DragonWorld::onStart()
 
 	//Light
 	m_light = new Light(
-		{ 1.0f, 1.0f, 1.0f },
+		{ 0.5f, 0.5f, 0.5f },
 		{ 0.25f, 0.5f, 0.5f, 1.0f },
 		{ 0.5f, 1.0f, 1.0f, 1.0f },
-		{ 0.5f, 1.0f, 1.0f, 1.0f }
+		{ 0.5f, 1.0f, 1.0f, 1.0f },
+		true
 	);
 	m_light->setDirection({ -40.0f, -100.0f, 0.0f });
 	add(m_light);
+
+	//Light1
+	m_light1 = new Light(
+		{ 0.5f, 0.5f, 0.5f },
+		{ 0.5f, 0.25f, 0.25f, 1.0f },
+		{ 0.5f, 1.0f, 1.0f, 1.0f },
+		{ 0.5f, 1.0f, 1.0f, 1.0f },
+		false
+	);
+	m_light1->setDirection({ 40.0f, 100.0f, 0.0f });
+	add(m_light1);
 
 	//Dragon
 	m_dragon = new OBJMesh();

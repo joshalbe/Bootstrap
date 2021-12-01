@@ -7,7 +7,7 @@ class Light : public Entity
 {
 public:
 	Light() {}
-	Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular);
+	Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, bool firstLight);
 	~Light() {}
 
 	void onDraw() override;
@@ -29,5 +29,7 @@ private:
 	glm::vec4 m_ambient = glm::vec4(0.0f);
 	glm::vec4 m_diffuse = glm::vec4(0.0f);
 	glm::vec4 m_specular = glm::vec4(0.0f);
+
+	bool isFirstLight;
 };
 
